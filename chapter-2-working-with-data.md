@@ -183,55 +183,49 @@ class App extends React.Component {
 
 in order to use this inside our CardList component we will use this.state.cards
 
-
-
-
-
-
-
 So, we have this code for the moment...
 
 ```
 const Card = function(props) {
-	return (
-  	<div style={{margin: '1em'}}>
-  	  <img width="75" src={props.avatarUrl} />
+    return (
+      <div style={{margin: '1em'}}>
+        <img width="75" src={props.avatarUrl} />
       <div style={{display: 'inline-block', marginLeft: 10}}>
         <div style={{fontSize: '1.25em', fontWeight: 'bold'}}>{props.name}</div>
         <div>{props.companyName}</div>
       </div>
-  	</div>
+      </div>
   );
 }
 
 let data = [
-	{ name: "jack",
-  	avatarUrl: "https://avatars1.githubusercontent.com/u/3663558?v=4",
+    { name: "jack",
+      avatarUrl: "https://avatars1.githubusercontent.com/u/3663558?v=4",
     companyName: "Jack's own"
   },
   { name: "jack",
-  	avatarUrl: "https://avatars1.githubusercontent.com/u/3663558?v=4",
+      avatarUrl: "https://avatars1.githubusercontent.com/u/3663558?v=4",
     companyName: "Jack's own"
   }
 ]
 
 const CardList = (props) => {
-	return (
-		<div>
-			{props.cards.map(card => <Card {...card}/>)}
-		</div>
-	);
+    return (
+        <div>
+            {props.cards.map(card => <Card {...card}/>)}
+        </div>
+    );
 }
 
 class CardForm extends React.Component {
-	render() {
-		return (
-			<form>
-				<input type="text" placeholder="github username"/>
-				<button type="submit">Add card</button>
-			</form>
-		);
-	
+    render() {
+        return (
+            <form>
+                <input type="text" placeholder="github username"/>
+                <button type="submit">Add card</button>
+            </form>
+        );
+
   }
 }
 
@@ -249,14 +243,14 @@ class App extends React.Component {
       companyName: "Jack's own"}
     ]
   }
-	render() {
-		return (
-			<div>
-				<CardForm />
-				<CardList cards={this.state.cards}/>
-			</div>
-		);
-	}
+    render() {
+        return (
+            <div>
+                <CardForm />
+                <CardList cards={this.state.cards}/>
+            </div>
+        );
+    }
 }
 
 ReactDOM.render(<App />, mountNode);
