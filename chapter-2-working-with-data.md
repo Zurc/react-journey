@@ -67,18 +67,14 @@ const Card = function(props) {
 }
 ```
 
-
-
-
-
 Let's create another component 'CardList' that will hold our list of cards
 
 ```
 const CardList = (props) => {
-	return (
-  	<div>
-  	  <Card />
-  	</div>
+    return (
+      <div>
+        <Card />
+      </div>
   );
 }
 ```
@@ -87,8 +83,6 @@ Now try using real data. go to github api users, copy the avatar url, name... et
 
 That will give you an idea on how the card will look like
 
-
-
 At this stage, if we pass multiple Card comps to our CardList comp they will all display the same content
 
 so, to fix that we pass the info as props into each card
@@ -96,6 +90,20 @@ so, to fix that we pass the info as props into each card
 This makes the Card component reusable, however, still we are hardcoding the values into each card.
 
 
+
+we want to add them dynamically, so \(for the moment\) we will add them as an array of objects 'data' where every object represent the data for each card
+
+```
+let card = [
+  { name: '...', ... }, {...}
+]
+```
+
+we want the CardList comp to render a card for each component on the array, so we pass this data as a prop
+
+```
+ ReactDOM.render(<Card card={card}/>, mountNode);
+```
 
 
 
