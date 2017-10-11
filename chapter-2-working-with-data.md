@@ -89,8 +89,6 @@ so, to fix that we pass the info as props into each card
 
 This makes the Card component reusable, however, still we are hardcoding the values into each card.
 
-
-
 we want to add them dynamically, so \(for the moment\) we will add them as an array of objects 'data' where every object represent the data for each card
 
 ```
@@ -102,7 +100,7 @@ let card = [
 we want the CardList comp to render a card for each component on the array, so we pass this data as a prop
 
 ```
- ReactDOM.render(<Card card={card}/>, mountNode);
+ ReactDOM.render(<Card card={data}/>, mountNode);
 ```
 
 
