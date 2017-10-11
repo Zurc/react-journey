@@ -157,8 +157,6 @@ and we pass that to the render function for ReactDOM
 ReactDOM.render(<App />, mountNode);
 ```
 
-
-
 The data array is still a global array, which is bad, it should be part of the app itself to make the whole app reusable, otherwise, multiple instances of the App component will use the same global data. We can maintain the data inside the instance property of the app component or  we can use react internal state object
 
 we want our app to re-render our app every time a new record is added we need to put it on the state component, so we only need to add a record to this data array and automatically it will render
@@ -171,7 +169,7 @@ We will rename data as 'cards' array
 class App extends React.Component {
   state = {
     cards: [
-	{ name: "Cruz",
+    { name: "Cruz",
           avatarUrl: "https://avatars2.githubusercontent.com/u/3543715?v=4",
           companyName: "Open Energi"},
         { name: "John",
@@ -184,4 +182,85 @@ class App extends React.Component {
 ```
 
 in order to use this inside our CardList component we will use this.state.cards
+
+
+
+
+
+
+
+So, we have this code for the moment...
+
+```
+const Card = function(props) {
+	return (
+  	<div style={{margin: '1em'}}>
+  	  <img width="75" src={props.avatarUrl} />
+      <div style={{display: 'inline-block', marginLeft: 10}}>
+        <div style={{fontSize: '1.25em', fontWeight: 'bold'}}>{props.name}</div>
+        <div>{props.companyName}</div>
+      </div>
+  	</div>
+  );
+}
+
+let data = [
+	{ name: "jack",
+  	avatarUrl: "https://avatars1.githubusercontent.com/u/3663558?v=4",
+    companyName: "Jack's own"
+  },
+  { name: "jack",
+  	avatarUrl: "https://avatars1.githubusercontent.com/u/3663558?v=4",
+    companyName: "Jack's own"
+  }
+]
+
+const CardList = (props) => {
+	return (
+		<div>
+			{props.cards.map(card => <Card {...card}/>)}
+		</div>
+	);
+}
+
+class CardForm extends React.Component {
+	render() {
+		return (
+			<form>
+				<input type="text" placeholder="github username"/>
+				<button type="submit">Add card</button>
+			</form>
+		);
+	
+  }
+}
+
+class App extends React.Component {
+  state = {
+    cards: [
+      { name: "Cruz",
+      avatarUrl: "https://avatars2.githubusercontent.com/u/3543715?v=4",
+      companyName: "Open Energi"},
+      { name: "John",
+      avatarUrl: "https://avatars1.githubusercontent.com/u/1668?v=4",
+      companyName: "Wordie"},
+      { name: "Jack",
+      avatarUrl: "https://avatars1.githubusercontent.com/u/3663558?v=4",
+      companyName: "Jack's own"}
+    ]
+  }
+	render() {
+		return (
+			<div>
+				<CardForm />
+				<CardList cards={this.state.cards}/>
+			</div>
+		);
+	}
+}
+
+ReactDOM.render(<App />, mountNode);
+```
+
+
 
