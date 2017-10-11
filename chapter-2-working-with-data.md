@@ -103,5 +103,63 @@ we want the CardList comp to render a card for each component on the array, so w
  ReactDOM.render(<Card card={data}/>, mountNode);
 ```
 
+Inside de CardList component we can get the data as props.data and we can map each card to display the Card component
+
+Because every Card comp renders data through its props so we want to pass the data as it is from the array data
+
+Using the spread operator we avoid the necessity of writing each prop \( name={card.name} ... \) 
+
+```
+const CardList = (props) => {
+	return (
+  	<div>
+  	  {props.cards.map(card => <Card {...card}/>)}
+  	</div>
+  );
+}
+```
+
+
+
+Let's create a new 'Form' component with an input and a button...
+
+```
+class CardForm extends React.Component {
+  render() {
+    return (
+    	<form>
+    	  <input type="text" placeholder="github username"/>
+          <button type="submit">Add card</button>
+    	</form>
+    );
+  }
+}
+```
+
+In order to make it work we could add the &lt;Form /&gt; component inside the card and that should work... but that's not entirely right... because the form shouldn't be part of the Card component
+
+
+
+To fix this we create a parent App component which will include both...
+
+```
+class App extends React.Component {
+	render() {
+  	return (
+    	<div>
+    	  <CardForm />
+        <CardList cards={data}/>
+    	</div>
+    );
+  }
+}
+```
+
+and we pass that to the render function for ReactDOM
+
+```
+ReactDOM.render(<App />, mountNode);
+```
+
 
 
