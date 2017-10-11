@@ -107,19 +107,17 @@ Inside de CardList component we can get the data as props.data and we can map ea
 
 Because every Card comp renders data through its props so we want to pass the data as it is from the array data
 
-Using the spread operator we avoid the necessity of writing each prop \( name={card.name} ... \) 
+Using the spread operator we avoid the necessity of writing each prop \( name={card.name} ... \)
 
 ```
 const CardList = (props) => {
-	return (
-  	<div>
-  	  {props.cards.map(card => <Card {...card}/>)}
-  	</div>
+    return (
+      <div>
+        {props.cards.map(card => <Card {...card}/>)}
+      </div>
   );
 }
 ```
-
-
 
 Let's create a new 'Form' component with an input and a button...
 
@@ -127,10 +125,10 @@ Let's create a new 'Form' component with an input and a button...
 class CardForm extends React.Component {
   render() {
     return (
-    	<form>
-    	  <input type="text" placeholder="github username"/>
+        <form>
+          <input type="text" placeholder="github username"/>
           <button type="submit">Add card</button>
-    	</form>
+        </form>
     );
   }
 }
@@ -138,18 +136,16 @@ class CardForm extends React.Component {
 
 In order to make it work we could add the &lt;Form /&gt; component inside the card and that should work... but that's not entirely right... because the form shouldn't be part of the Card component
 
-
-
 To fix this we create a parent App component which will include both...
 
 ```
 class App extends React.Component {
-	render() {
-  	return (
-    	<div>
-    	  <CardForm />
+    render() {
+      return (
+        <div>
+          <CardForm />
         <CardList cards={data}/>
-    	</div>
+        </div>
     );
   }
 }
@@ -162,4 +158,30 @@ ReactDOM.render(<App />, mountNode);
 ```
 
 
+
+The data array is still a global array, which is bad, it should be part of the app itself to make the whole app reusable, otherwise, multiple instances of the App component will use the same global data. We can maintain the data inside the instance property of the app component or  we can use react internal state object
+
+we want our app to re-render our app every time a new record is added we need to put it on the state component, so we only need to add a record to this data array and automatically it will render
+
+To allow both the Form and the CardList to access to that state we will put the array on the state of the parent component App
+
+We will rename data as 'cards' array
+
+```
+class App extends React.Component {
+  state = {
+    cards: [
+	{ name: "Cruz",
+          avatarUrl: "https://avatars2.githubusercontent.com/u/3543715?v=4",
+          companyName: "Open Energi"},
+        { name: "John",
+          avatarUrl: "https://avatars1.githubusercontent.com/u/1668?v=4",
+          companyName: "Wordie"},
+        { name: "Jack",
+          avatarUrl: "https://avatars1.githubusercontent.com/u/3663558?v=4",
+          companyName: "Jack's own"}
+     ]
+```
+
+in order to use this inside our CardList component we will use this.state.cards
 
