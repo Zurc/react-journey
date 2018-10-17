@@ -12,8 +12,7 @@ You can try this code on [jscomplete/repl](https://jscomplete.com/repl)
 
 ```javascript
 // class comps can be defined by extending the React.Component class 
-// and defining a render method inside of that.
-// the render method returns the react element
+// and defining a render method inside of that which returns the react element.
 
 import React from ‘react’;
 
@@ -65,7 +64,15 @@ class App extends React.Component {
 ReactDOM.render(<App />, mountNode);
 ```
 
+Another way to create a comp class...
 
+```javascript
+import React, { Component } from ‘react’;
+
+class NameOfTheClass extends Component {
+  //... code here
+}
+```
 
 
 
