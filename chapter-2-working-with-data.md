@@ -56,7 +56,7 @@ then we style our class 'info' on the css
 
 So, after adding some styles our card could look something like this:
 
-```
+```javascript
 const Card = function(props) {
     return (
       <div style={{margin: '1em'}}>
@@ -72,7 +72,7 @@ const Card = function(props) {
 
 Let's create another component 'CardList' that will hold our list of cards
 
-```
+```javascript
 const CardList = (props) => {
     return (
       <div>
