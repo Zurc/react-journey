@@ -28,6 +28,8 @@ So that returns something like this...
 
 ![alt text](https://github.com/Zurc/react-journey/blob/master/assets/Screen%20Shot%202017-10-11%20at%2012.08.27.png)
 
+<img src="https://github.com/Zurc/react-journey/blob/master/assets/Screen%20Shot%202017-10-11%20at%2012.08.27.png" alt="screenshot" style="border: 1px solid #333"/>
+
 
 
 Let's style that, there is a couple of options to style a component with react:
