@@ -8,15 +8,15 @@ Let's create a Card component to display that info... \(you can test on the go w
 
 As there will be no interaction or state \(at the moment\) with this component, so make sense to create it as a function component
 
-```
+```javascript
 const Card = function(props) {
     return (
       <div>
-        <img src="http://placehold.it/75" />
-      <div>
-        <div>Name: ...</div>
-        <div>Company Name: ...</div>
-      </div>
+          <img src="http://placehold.it/75" />
+          <div>
+            <div>Name: ...</div>
+            <div>Company Name: ...</div>
+          </div>
       </div>
   );
 }
@@ -26,7 +26,9 @@ ReactDOM.render(<Card />, mountNode);
 
 So that returns something like this...
 
-![](/assets/Screen Shot 2017-10-11 at 12.09.27.png)
+![alt text](/assets/Screen Shot 2017-10-11 at 12.09.27.png)
+
+
 
 Let's style that, there is a couple of options to style a component with react:
 
