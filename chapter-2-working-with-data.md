@@ -26,7 +26,7 @@ ReactDOM.render(<Card />, mountNode);
 
 So that returns something like this...
 
-![alt text](https://github.com/Zurc/react-journey/assets/Screen Shot 2017-10-11 at 12.09.27.png)
+![alt text](https://github.com/Zurc/react-journey/blob/master/assets/Screen%20Shot%202017-10-11%20at%2012.08.27.png)
 
 
 
