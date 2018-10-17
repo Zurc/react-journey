@@ -35,11 +35,10 @@ You can read the creator of Redux \([Dan Abramov](https://medium.com/@dan_abramo
 You can try this code on [jscomplete/repl](https://jscomplete.com/repl)
 
 ```javascript
-// class comps can be defined by extending the React.Component class 
-// and defining a render method inside of that which returns the react element.
-
 import React from ‘react’;
 
+// **class comps** can be defined by extending the React.Component class 
+// and defining a render method inside of that which returns the react element.
 class Button extends React.Component {
 
   handleClick = () => {
@@ -55,8 +54,8 @@ class Button extends React.Component {
   };
 }
 
-// function comps can be defined with simple functions that receive a props obj and returns a react elem
-const Result = (props) => {
+// **function comps** can be defined with simple functions that receive a props obj and returns a react elem
+const Result = props => {
   return (
     <div>{props.counter}</div>
   )
