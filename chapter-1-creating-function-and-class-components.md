@@ -16,6 +16,20 @@ import { Render } from 'react-dom';
 
 We need to touch the real DOM **at least once** to mount the entire app to the page
 
+the first argument passed into render method define WHAT we want to pass (HTML or JSX component)
+the second argument is WHERE, which DOM point to mount to page
+
+```javascript
+render(<h1>Hi there!</h1>, document.querySelector('...'));
+
+//or 
+
+render(<h1>Hi there!</h1>, document.getElementById('...'));
+
+//or 
+render(ComponentNameHere, document.querySelector('...'));
+```
+
 
 To create a Class component there is two main ways (they are the same, use the one you are more comfortable with), by importing React and using React.Component property...
 
