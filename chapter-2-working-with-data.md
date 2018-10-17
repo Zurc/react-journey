@@ -26,7 +26,7 @@ ReactDOM.render(<Card />, mountNode);
 
 So that returns something like this...
 
-![alt text](assets/Screen Shot 2017-10-11 at 12.09.27.png)
+![alt text](./assets/Screen Shot 2017-10-11 at 12.09.27.png)
 
 
 
