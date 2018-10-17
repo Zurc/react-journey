@@ -28,9 +28,6 @@ So that returns something like this...
 
 ![alt text](https://github.com/Zurc/react-journey/blob/master/assets/Screen%20Shot%202017-10-11%20at%2012.08.27.png)
 
-<img src="https://github.com/Zurc/react-journey/blob/master/assets/Screen%20Shot%202017-10-11%20at%2012.08.27.png" alt="screenshot" style="border-width: 1px; border-color: #333; border-style: solid;"/>
-
-
 Let's style that, there is a couple of options to style a component with react:
 
 * Include a stylesheet file with your classes and add a class attribute to your element
@@ -94,7 +91,7 @@ This makes the Card component reusable, however, still we are hardcoding the val
 
 we want to add them dynamically, so \(for the moment\) we will add them as an array of objects 'data' where every object represent the data for each card
 
-```
+```javascript
 let card = [
   { name: '...', ... }, {...}
 ]
@@ -102,7 +99,7 @@ let card = [
 
 we want the CardList comp to render a card for each component on the array, so we pass this data as a prop
 
-```
+```javascript
  ReactDOM.render(<Card card={data}/>, mountNode);
 ```
 
@@ -112,7 +109,7 @@ Because every Card comp renders data through its props so we want to pass the da
 
 Using the spread operator we avoid the necessity of writing each prop \( name={card.name} ... \)
 
-```
+```javascript
 const CardList = (props) => {
     return (
       <div>
@@ -124,7 +121,7 @@ const CardList = (props) => {
 
 Let's create a new 'Form' component with an input and a button...
 
-```
+```javascript
 class CardForm extends React.Component {
   render() {
     return (
@@ -141,7 +138,7 @@ In order to make it work we could add the &lt;Form /&gt; component inside the ca
 
 To fix this we create a parent App component which will include both...
 
-```
+```javascript
 class App extends React.Component {
     render() {
       return (
@@ -156,7 +153,7 @@ class App extends React.Component {
 
 and we pass that to the render function for ReactDOM
 
-```
+```javascript
 ReactDOM.render(<App />, mountNode);
 ```
 
@@ -168,7 +165,7 @@ To allow both the Form and the CardList to access to that state we will put the 
 
 We will rename data as 'cards' array
 
-```
+```javascript
 class App extends React.Component {
   state = {
     cards: [
@@ -188,7 +185,7 @@ in order to use this inside our CardList component we will use this.state.cards
 
 So, we have this code for the moment...
 
-```
+```javascript
 const Card = function(props) {
     return (
       <div style={{margin: '1em'}}>
