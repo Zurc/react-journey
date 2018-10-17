@@ -25,8 +25,9 @@ ReactDOM.render(<Card />, mountNode);
 ```
 
 So that returns something like this...
-
-![alt text](https://github.com/Zurc/react-journey/blob/master/assets/Screen%20Shot%202017-10-11%20at%2012.08.27.png){ width=50% }
+<div style="width:150px; height:100px">
+![alt text](https://github.com/Zurc/react-journey/blob/master/assets/Screen%20Shot%202017-10-11%20at%2012.08.27.png)
+</div>
 
 <img src="https://github.com/Zurc/react-journey/blob/master/assets/Screen%20Shot%202017-10-11%20at%2012.08.27.png" alt="screenshot" style="border: 1px solid #333; box-shadow: 1px 1px 3px #333;"/>
 
