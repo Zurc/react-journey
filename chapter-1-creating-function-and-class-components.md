@@ -4,6 +4,26 @@ Function comps: Sometimes this have different names, like presentational compone
 
 Class comps: other names... container components, smart components... etc
 
+To create a Class component there is two main ways (they are the same, use the one you are more comfortable with), by importing React and using React.Component property...
+
+```javascript
+import React from ‘react’;
+
+class Button extends React.Component {
+  // ...code here
+}
+```
+
+...or by importing the 'named property' Component and use it directly...
+
+```javascript
+import React, { Component } from ‘react’;
+
+class NameOfTheClass extends Component {
+  // ...code here
+}
+```
+
 
 
 You can read the creator of Redux \([Dan Abramov](https://medium.com/@dan_abramov?source=post_header_lockup)\) talking about this [here](https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0)
@@ -64,25 +84,7 @@ class App extends React.Component {
 ReactDOM.render(<App />, mountNode);
 ```
 
-So you see...
 
-```javascript
-import React from ‘react’;
-
-class Button extends React.Component {
-  // ...code here
-}
-```
-
-Another way to create a comp class...
-
-```javascript
-import React, { Component } from ‘react’;
-
-class NameOfTheClass extends Component {
-  // ...code here
-}
-```
 
 
 
