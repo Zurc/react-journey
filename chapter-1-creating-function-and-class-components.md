@@ -64,13 +64,23 @@ class App extends React.Component {
 ReactDOM.render(<App />, mountNode);
 ```
 
+So you see...
+
+```javascript
+import React from ‘react’;
+
+class Button extends React.Component {
+  // ...code here
+}
+```
+
 Another way to create a comp class...
 
 ```javascript
 import React, { Component } from ‘react’;
 
 class NameOfTheClass extends Component {
-  //... code here
+  // ...code here
 }
 ```
 
