@@ -8,6 +8,15 @@ Sometimes this have different names, like presentational components, dumb compon
 
 Class comps: other names... container components, smart components... etc
 
+Every single class in react needs **at least one method: render() {}** which determines what HTML/DOM elem renders out to the page. We need to import the render method from react-dom for that
+
+```javascript
+import { Render } from 'react-dom';
+```
+
+We need to touch the real DOM **at least once** to mount the entire app to the page
+
+
 To create a Class component there is two main ways (they are the same, use the one you are more comfortable with), by importing React and using React.Component property...
 
 ```javascript
