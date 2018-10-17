@@ -1,6 +1,10 @@
 ## Chapter 1 - creating function and class components
 
-Function comps: Sometimes this have different names, like presentational components, dumb componentes
+#### Functional components
+
+Sometimes this have different names, like presentational components, dumb componentes
+
+#### Class Components
 
 Class comps: other names... container components, smart components... etc
 
