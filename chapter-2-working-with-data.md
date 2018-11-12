@@ -36,7 +36,7 @@ Let's style that, there is a couple of options to style a component with react:
 <div className="info">
 ```
 
-we use className as it is the javascript api using it
+we use **className** as it is the javascript api using it
 
 then we style our class 'info' on the css
 
