@@ -143,8 +143,8 @@ class App extends React.Component {
     render() {
       return (
         <div>
-          <CardForm />
-        <CardList cards={data}/>
+            <CardForm />
+            <CardList cards={data}/>
         </div>
     );
   }
@@ -169,7 +169,7 @@ We will rename data as 'cards' array
 class App extends React.Component {
   state = {
     cards: [
-    { name: "Cruz",
+        { name: "Cruz",
           avatarUrl: "https://avatars2.githubusercontent.com/u/3543715?v=4",
           companyName: "Open Energi"},
         { name: "John",
@@ -190,24 +190,13 @@ const Card = function(props) {
     return (
       <div style={{margin: '1em'}}>
         <img width="75" src={props.avatarUrl} />
-      <div style={{display: 'inline-block', marginLeft: 10}}>
-        <div style={{fontSize: '1.25em', fontWeight: 'bold'}}>{props.name}</div>
-        <div>{props.companyName}</div>
-      </div>
+        <div style={{display: 'inline-block', marginLeft: 10}}>
+            <div style={{fontSize: '1.25em', fontWeight: 'bold'}}>{props.name}</div>
+            <div>{props.companyName}</div>
+        </div>
       </div>
   );
 }
-
-let data = [
-    { name: "jack",
-      avatarUrl: "https://avatars1.githubusercontent.com/u/3663558?v=4",
-    companyName: "Jack's own"
-  },
-  { name: "jack",
-      avatarUrl: "https://avatars1.githubusercontent.com/u/3663558?v=4",
-    companyName: "Jack's own"
-  }
-]
 
 const CardList = (props) => {
     return (
